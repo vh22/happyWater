@@ -350,9 +350,9 @@ h5.over-title {
   width: 100%;
   z-index: 1089;
   border: none;
+  border-bottom: 1px solid #c8c7cc;
   margin-bottom: 0;
   height: 65px;
-  border-bottom: 1px solid #c8c7cc;
 }
 .navbar .loading-bar-wrapper {
   position: absolute;
