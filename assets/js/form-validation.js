@@ -34,8 +34,8 @@ var FormValidator = function () {
 					email: true
 				},
 				userphone: {
-					minlength: 13,
-					maxlength: 13,
+					minlength: 15,
+					maxlength: 15,
 					required: true
 				},
 				userrole: {
@@ -80,8 +80,8 @@ var FormValidator = function () {
 				},
 				userphone: {
 					required: "You forgot to enter a phone",
-					minlength: "The phone must be of length 13 values",
-					maxlength: "The phone must be of length 13 values"
+					minlength: "The phone must be of length 10 values",
+					maxlength: "The phone must be of length 10 values"
 				},
 				userrole: "You forgot to pick the role",
 				usergender: "You forgot to pick a gender",

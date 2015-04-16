@@ -3,6 +3,7 @@ var FormElements = function() {"use strict";
 	//function to initiate jquery.maskedinput
 	var maskInputHandler = function() {
 		$.mask.definitions['~'] = '[+-]';
+		$('.input-mask-userphone').mask('+38(999)9999999');
 		$('.input-mask-date').mask('99/99/9999');
 		$('.input-mask-phone').mask('(999) 999-9999');
 		$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
