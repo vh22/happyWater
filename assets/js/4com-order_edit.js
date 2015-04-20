@@ -1,6 +1,6 @@
 /* #validation
 ********************/
-var FormValidator = function () {
+var order_list = function () {
 	"use strict";
 	var validateCheckRadio = function (val) {
 		$("input[type='radio'], input[type='checkbox']").on('ifChecked', function(event) {
@@ -139,12 +139,21 @@ var FormValidator = function () {
 	var maskInputHandler = function() {
 		$('.input-mask-userphone').mask('+38(999)9999999');
 	};
+	//function to init datepicker
+	var datePickerHandler = function() {
+		$('.datepicker').datepicker({
+			autoclose: true,
+			todayHighlight: true
+		});
+
+	};
 	return {
 		//main function to initiate template pages
 		init: function () {
 			validateCheckRadio();
 			runValidator1();
 			maskInputHandler();
+			datePickerHandler();
 		}
 	};
 }();

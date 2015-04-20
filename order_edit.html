@@ -35,7 +35,7 @@
 		<!-- end: CLIP-TWO CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="screen">
-		<link href="vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+		<link href="vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
@@ -50,7 +50,7 @@
 							<span>Main Navigation</span>
 						</div>
 						<ul class="main-navigation-menu">
-							<li class="active open">
+							<li>
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -67,7 +67,7 @@
 											<span class="title"> User list </span>
 										</a>
 									</li>
-									<li class="active">
+									<li>
 										<a href="">
 											<span class="title"> User page </span>
 										</a>
@@ -158,7 +158,7 @@
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li class="active open">
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -170,19 +170,14 @@
 									</div>
 								</a>
 								<ul class="sub-menu">
-									<li>
-										<a href="table_basic.html">
-											<span class="title">Basic Tables</span>
-										</a>
-									</li>
-									<li>
-										<a href="table_responsive.html">
-											<span class="title">Responsive Tables</span>
-										</a>
-									</li>
 									<li class="active">
-										<a href="table_data.html">
-											<span class="title">Advanced Data Tables</span>
+										<a href="orders_list.html">
+											<span class="title">Orders list</span>
+										</a>
+									</li>
+									<li>
+										<a href="order_details.html">
+											<span class="title">Orders details</span>
 										</a>
 									</li>
 								</ul>
@@ -715,13 +710,13 @@
 													<legend>
 														Order data
 													</legend>
-													<div class="col-md-6">
+													<div class="col-sm-6 col-md-5 col-lg-4">
 														<div class="form-group">
-															<label for="username">
-																Order Date <span class="symbol required"></span>
+															<label for="orderdate">
+																Order Date
 															</label>
 															<p class="input-group input-append datepicker date">
-																<input type="text" class="form-control"/>
+																<input name="orderdate" id="orderdate" type="text" class="form-control"/>
 																<span class="input-group-btn">
 																	<button type="button" class="btn btn-default">
 																		<i class="glyphicon glyphicon-calendar"></i>
@@ -729,16 +724,16 @@
 															</p>
 														</div>
 														<div class="form-group">
-															<label for="useremail">
-																Order price <span class="symbol required"></span>
+															<label for="orderprice">
+																Order price
 															</label>
-															<input type="email" placeholder="mail@gmail.com" name="useremail" id="useremail" class="form-control">
+															<input type="number" min="0" placeholder="Enter a price" name="orderprice" id="orderprice" class="form-control">
 														</div>
 														<div class="form-group">
-															<label for="userrole">
+															<label for="orderstatus">
 																Order status
 															</label>
-															<select name="userrole" id="userrole" class="form-control">
+															<select name="orderstatus" id="orderstatus" class="form-control">
 																<option value="" disabled selected>Select a status</option>
 																<option value="Delivered">Delivered</option>
 																<option value="Confirmed">Confirmed</option>
@@ -746,15 +741,57 @@
 															</select>
 														</div>
 														<div class="form-group">
-															<label for="userphone">
-																Product id <span class="symbol required"></span>
+															<label for="productid">
+																Product id
 															</label>
-															<select name="userrole1" id="userrole1" class="form-control">
-																<option value="" disabled selected>Select a status</option>
+															<select name="productid" id="productid" class="form-control">
+																<option value="" disabled selected>Select a product id</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
 																<option value="3">3</option>
 															</select>
+														</div>
+														<div class="form-group">
+															<label for="creditappies">
+																Credit appies
+															</label>
+															<input type="number" min="0" placeholder="Enter a credit appies" name="creditappies" id="creditappies" class="form-control">
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-5 col-lg-4">
+														<div class="form-group">
+															<label for="prefdate">
+																Preferred Date
+															</label>
+															<p class="input-group input-append datepicker date">
+																<input name="prefdate" id="prefdate" type="text" class="form-control"/>
+																<span class="input-group-btn">
+																	<button type="button" class="btn btn-default">
+																		<i class="glyphicon glyphicon-calendar"></i>
+																	</button> </span>
+															</p>
+														</div>
+														<div class="form-group">
+															<label for="prefsession">
+																Preferred session
+															</label>
+															<select name="prefsession" id="prefsession" class="form-control">
+																<option value="" disabled selected>Select a preferred session</option>
+																<option value="am">am</option>
+																<option value="pm">pm</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<label for="emptybottle">
+																Empty bottle
+															</label>
+															<input type="number" min="0" placeholder="Enter a credit appies" name="emptybottle" id="emptybottle" class="form-control">
+														</div>
+														<div class="form-group">
+															<label for="receivedby">
+																Received by
+															</label>
+															<input type="text" placeholder="Enter the name of the recipient" name="receivedby" id="receivedby" class="form-control">
 														</div>
 													</div>
 												</fieldset>
@@ -796,20 +833,20 @@
 		<script src="vendor/ckeditor/ckeditor.js"></script>
 		<script src="vendor/ckeditor/adapters/jquery.js"></script>
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+		<script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
 		<!--		<script src="assets/js/table-data.js"></script>-->
 		<script src="assets/js/4com-order_edit.js"></script>
-		<!--
-<script src="assets/js/form-validation.js"></script>
-<script src="assets/js/form-elements.js"></script>
--->
+
+		<!--<script src="assets/js/form-validation.js"></script>-->
+		<!--		<script src="assets/js/form-elements.js"></script>-->
+
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				FormValidator.init();
-				FormElements.init();
+				order_list.init();
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->
