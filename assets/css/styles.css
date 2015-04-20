@@ -389,6 +389,7 @@ h5.over-title {
 }
 .navbar .navbar-header .navbar-brand {
   padding: 0 15px;
+  text-transform: uppercase;
 }
 .navbar .navbar-header .navbar-brand img {
   display: inline-block;
