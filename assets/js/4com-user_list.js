@@ -1,4 +1,5 @@
-var TableData = function() {
+
+var user_list = function() {
 	"use strict";
 	//function to initiate DataTable
 	//DataTable is a highly flexible tool, based upon the foundations of progressive enhancement,
@@ -18,7 +19,7 @@ var TableData = function() {
 					"sNext" : ""
 				}
 			},
-			"aaSorting" : [[1, 'asc']],
+			"aaSorting" : [[0, 'asc']],
 			"aLengthMenu" : [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"] // change per page values here
 											],
 			// set the initial value

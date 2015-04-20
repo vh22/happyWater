@@ -1,6 +1,6 @@
 /* #validation
 ********************/
-var order_list = function () {
+var edit_order = function () {
 	"use strict";
 	var validateCheckRadio = function (val) {
 		$("input[type='radio'], input[type='checkbox']").on('ifChecked', function(event) {

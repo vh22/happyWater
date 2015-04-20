@@ -1,4 +1,4 @@
-var TableData = function() {
+var order_list = function() {
 	"use strict";
 	//function to initiate DataTable
 	//DataTable is a highly flexible tool, based upon the foundations of progressive enhancement,
