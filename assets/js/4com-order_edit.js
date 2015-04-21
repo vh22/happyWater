@@ -9,104 +9,75 @@ var edit_order = function () {
 	};
 	// function to initiate Validation Sample 1
 	var runValidator1 = function () {
-		var form1 = $('#form_useredit');
+		var form1 = $('#form_editorder');
 		var errorHandler1 = $('.errorHandler', form1);
 		var successHandler1 = $('.successHandler', form1);
-		$('#form_useredit').validate({
+		$.validator.addMethod(
+			"customDate",
+			function(value, element) {
+				// put your own logic here, this is just a (crappy) example
+				return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+			}
+		);
+		$.validator.addMethod(
+			"money",
+			function(value, element) {
+				// put your own logic here, this is just a (crappy) example
+				return value.match(/^\d{0,9}(\.\d{0,9})?$/);
+			}
+		);
+		$('#form_editorder').validate({
 			errorElement: "span", // contain the error msg in a span tag
 			errorClass: 'help-block',
 			errorPlacement: function (error, element) { // render error placement for each input type
-				if (element.attr("type") == "radio" || element.attr("type") == "checkbox") { // for chosen elements, need to insert the error after the chosen container
-					error.insertAfter($(element).closest('.form-group').children('div').children().last());
-				} else {
-					error.insertAfter(element);
-					// for other inputs, just perform default behavior
-				}
+				error.insertAfter(element);
+				// for other inputs, just perform default behavior
 			},
 			ignore: "",
 			rules: {
-				username: {
-					minlength: 2,
-					maxlength: 16,
+				orderdate: {
+					customDate : true
+				},
+				orderprice: {
+					required: true,
+					min: 0,
+					money: true
+				},
+				orderstatus: {
 					required: true
 				},
-				useremail: {
+				productid: {
 					required: true,
-					email: true
+					min: 0
 				},
-				userphone: {
-					minlength: 15,
-					maxlength: 15,
+				creditappies: {
+					required: true,
+					min: 0
+				},
+				prefdate: {
+					customDate : true
+				},
+				prefsession: {
 					required: true
 				},
-				userrole: {
+				emptybottle: {
+					required: true,
+					min: 0
+				},
+				receivedby: {
 					required: true
-				},
-				usergender: {
-					required: true
-				},
-				usercountry: {
-					required: true,
-					minlength: 3,
-					maxlength: 15
-				},
-				userstreet: {
-					required: true,
-					minlength: 3,
-					maxlength: 15
-				},
-				userstate: {
-					required: true,
-					minlength: 3,
-					maxlength: 15
-				},
-				useraddress: {
-					required: true
-				},
-				usercity: {
-					required: true,
-					minlength: 3,
-					maxlength: 15
 				}
 			},
 			messages: {
-				username: {
-					required: "You forgot to write the name",
-					minlength: "Name must be more than 1 letters",
-					maxlength: "We think there are no names longer than 16 characters"
-				},
-				useremail: {
-					required: "You forgot to enter an email",
-					email: "Email address must be in the format of name@domain.com"
-				},
-				userphone: {
-					required: "You forgot to enter a phone",
-					minlength: "The phone must be of length 10 values",
-					maxlength: "The phone must be of length 10 values"
-				},
-				userrole: "You forgot to pick the role",
-				usergender: "You forgot to pick a gender",
-				usercountry: {
-					required: "You forgot to enter a country",
-					minlength: "Country name should be greater than 2 letters",
-					maxlength: "We think there is no country names longer than 15 characters"
-				},
-				userstreet: {
-					required: "You forgot to enter a street",
-					minlength: "Street name should be greater than 2 letters",
-					maxlength: "We think there is no street names longer than 15 characters"
-				},
-				userstate:  {
-					required: "You forgot to enter a state",
-					minlength: "State name should be greater than 2 letters",
-					maxlength: "We think there is no state names longer than 15 characters"
-				},
-				useraddress: "You forgot to enter an address",
-				usercity: {
-					required: "You forgot to enter a city",
-					minlength: "City name should be greater than 2 letters",
-					maxlength: "We think there is no city names longer than 15 characters"
-				}
+				orderdate: "Please enter a date in the format dd/mm/yyyy",
+				orderprice: "Please enter a price in the format 666.666.",
+				orderstatus: "Please select your order status",
+				productid: "Please select the product id",
+				creditappies: "Please enter a credit appies",
+				prefdate: "Please enter a date in the format dd/mm/yyyy",
+				prefsession: "Please select the session more comfortable for client",
+				emptybottle: "Please enter the number of empty bottles",
+				receivedby: "Please enter the recipient's"
 			},
 			invalidHandler: function (event, validator) { //display error alert on form submit
 				successHandler1.hide();
@@ -131,13 +102,9 @@ var edit_order = function () {
 				successHandler1.show();
 				errorHandler1.hide();
 				// submit form
-				$('#form_useredit').submit();
+				$('#form_editorder').submit();
 			}
 		});
-	};
-	//function to initiate jquery.maskedinput
-	var maskInputHandler = function() {
-		$('.input-mask-userphone').mask('+38(999)9999999');
 	};
 	//function to init datepicker
 	var datePickerHandler = function() {
@@ -152,7 +119,6 @@ var edit_order = function () {
 		init: function () {
 			validateCheckRadio();
 			runValidator1();
-			maskInputHandler();
 			datePickerHandler();
 		}
 	};
