@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Edit user</title>
+		<title>Add new product</title>
 		<!-- start: META -->
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta charset="utf-8" />
@@ -34,12 +34,11 @@
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		<!-- end: CLIP-TWO CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="screen">
-		<link href="vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="vendor/jquery-file-upload/css/jquery.fileupload-ui.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
-	<body>
+	<body id="edit-order-page">
 		<div id="app">
 			<!-- sidebar -->
 			<div class="sidebar app-aside" id="sidebar">
@@ -50,7 +49,7 @@
 							<span>Main Navigation</span>
 						</div>
 						<ul class="main-navigation-menu">
-							<li class="active open">
+							<li>
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -67,14 +66,14 @@
 											<span class="title"> User list </span>
 										</a>
 									</li>
-									<li class="active">
+									<li>
 										<a href="user_edit.html">
 											<span class="title"> User page </span>
 										</a>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li class="active open">
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -226,6 +225,10 @@
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>
 						</a>
+						<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<i class="ti-view-grid"></i>
+						</a>
 					</div>
 					<!-- end: NAVBAR HEADER -->
 				</header>
@@ -236,7 +239,7 @@
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Edit user</h1>
+									<h1 class="mainTitle">Add new product</h1>
 									<span class="mainDescription">overview &amp; stats</span>
 								</div>
 							</div>
@@ -246,7 +249,41 @@
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="#" role="form" id="form_useredit">
+									<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+										<!-- Redirect browsers with JavaScript disabled to the origin page -->
+										<noscript>
+											<input type="hidden" name="redirect" value="http://blueimp.github.io/jQuery-File-Upload/">
+										</noscript>
+										<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+										<div class="row fileupload-buttonbar">
+											<div class="col-lg-7">
+												<!-- The fileinput-button span is used to style the file input field as button -->
+												<span class="btn btn-success fileinput-button"> <i class="glyphicon glyphicon-plus"></i> <span>Add product image</span>
+													<input type="file" name="files[]" multiple>
+												</span>
+												<!-- The loading indicator is shown during file processing -->
+												<span class="fileupload-loading"></span>
+											</div>
+											<!-- The global progress information -->
+											<div class="col-lg-5 fileupload-progress fade">
+												<!-- The global progress bar -->
+												<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+													<div class="progress-bar progress-bar-success" style="width:0%;"></div>
+												</div>
+												<!-- The extended global progress information -->
+												<div class="progress-extended">
+													&nbsp;
+												</div>
+											</div>
+										</div>
+										<!-- The table listing the files available for upload/download -->
+										<table role="presentation" class="table table-striped">
+											<tbody class="files"></tbody>
+										</table>
+									</form>
+								</div>
+								<div class="col-md-12">
+									<form action="#" role="form" id="form_addproduct">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
@@ -259,98 +296,46 @@
 											<div class="col-md-12">
 												<fieldset>
 													<legend>
-														User data
+														Product data
 													</legend>
-													<div class="col-md-6">
-														<div class="form-group">
-															<label for="username">
-																User name <span class="symbol required"></span>
+													<div class="col-sm-12">
+														<div class="form-group col-sm-6 col-md-5 col-lg-4">
+															<label for="newProdutId">
+																Product id
 															</label>
-															<input type="text" placeholder="User name" name="username" id="username" class="form-control">
+															<input type="text" placeholder="New Id" value="" name="newProdutId" id="newProdutId" class="form-control" readonly>
 														</div>
-														<div class="form-group">
-															<label for="useremail">
-																Email <span class="symbol required"></span>
+														<div class="form-group col-sm-6 col-md-5 col-lg-4">
+															<label for="productname">
+																Product name <span class="symbol required"></span>
 															</label>
-															<input type="email" placeholder="mail@gmail.com" name="useremail" id="useremail" class="form-control">
+															<input type="text" placeholder="Enter a product name" name="productname" id="productname" class="form-control">
 														</div>
-														<div class="form-group">
-															<label for="userphone">
-																Phone <span class="symbol required"></span>
+														<div class="form-group col-sm-6 col-md-5 col-lg-4">
+															<label for="productprice">
+																Product price <span class="symbol required"></span>
 															</label>
-															<input type="text" placeholder="+38(066)5578595" name="userphone" id="userphone" class="input-mask-userphone form-control">
+															<input type="number" min="0" placeholder="Enter a product price" name="productprice" id="productprice" class="form-control">
 														</div>
-														<div class="form-group">
-															<label for="userrole">
-																User role
+														<div class="form-group col-sm-6 col-md-5 col-lg-4">
+															<label for="productdetails">
+																Product details <span class="symbol required"></span>
 															</label>
-															<select name="userrole" id="userrole" class="form-control">
-																<option value="" disabled selected>Select a role</option>
-																<option value="admin">Admin</option>
-																<option value="driver">Driver</option>
-																<option value="client">Client</option>
-															</select>
+															<textarea id="productdetails" name="productdetails" class="form-control autosize area-animated"></textarea>
 														</div>
-													</div>
-													<div class="col-md-6">
+														<div class="form-group col-sm-6 col-md-5 col-lg-4">
+															<label for="rewardpoints">
+																Reward points <span class="symbol required"></span>
+															</label>
+															<input type="number" min="0" placeholder="Enter a reward points" name="rewardpoints" id="rewardpoints" class="form-control">
+														</div>
 														<div class="col-md-12">
-															<div class="form-group">
-																<label class="block">
-																	Gender <span class="symbol required"></span>
-																</label>
-																<div class="clip-radio radio-primary">
-																	<input type="radio" id="female" name="usergender" value="female">
-																	<label for="female">
-																		Female
-																	</label>
-																	<input type="radio" id="male" name="usergender" value="male">
-																	<label for="male">
-																		Male
-																	</label>
-																</div>
-															</div>
+															<hr>
+															<p class="pull-left">By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions</p>
+															<button class="btn btn-primary btn-wide pull-right" type="submit">
+																Add <i class="fa fa-arrow-circle-right"></i>
+															</button>
 														</div>
-														<div class="col-md-6">
-															<div class="form-group">
-																<label>
-																	Country <span class="symbol required"></span>
-																</label>
-																<input type="text" placeholder="Country" name="usercountry" id="usercountry" class="form-control">
-															</div>
-															<div class="form-group">
-																<label>
-																	Street <span class="symbol required"></span>
-																</label>
-																<input type="text" placeholder="Street" name="userstreet" id="userstreet" class="form-control">
-															</div>
-															<div class="form-group">
-																<label>
-																	State <span class="symbol required"></span>
-																</label>
-																<input type="text" placeholder="State" name="userstate" id="userstate" class="form-control">
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="form-group">
-																<label>
-																	Address <span class="symbol required"></span>
-																</label>
-																<input type="text" placeholder="Address" name="useraddress" id="useraddress" class="form-control">
-															</div>
-															<div class="form-group">
-																<label>
-																	City <span class="symbol required"></span>
-																</label>
-																<input type="text" placeholder="City" name="usercity" id="usercity" class="form-control">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-12">
-														<hr>
-														<p class="pull-left">By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions</p>
-														<button class="btn btn-primary btn-wide pull-right" type="submit">
-															Update <i class="fa fa-arrow-circle-right"></i>
-														</button>
 													</div>
 												</fieldset>
 											</div>
@@ -385,25 +370,142 @@
 		<script src="vendor/switchery/switchery.min.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
-		<script src="vendor/select2/select2.min.js"></script>
-		<script src="vendor/DataTables/jquery.dataTables.min.js"></script>
-		<script src="vendor/ckeditor/ckeditor.js"></script>
-		<script src="vendor/ckeditor/adapters/jquery.js"></script>
+		<!-- The basic File Upload plugin -->
+		<!-- The template to display files available for upload -->
+		<script id="template-upload" type="text/x-tmpl">
+			{% for (var i=0, file; file=o.files[i]; i++) { %}
+			<tr class="template-upload fade">
+			<td>
+			<span class="preview"></span>
+			</td>
+			<td>
+			<p class="name">{%=file.name%}</p>
+			{% if (file.error) { %}
+			<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+			{% } %}
+			</td>
+			<td>
+			<p class="size">{%=o.formatFileSize(file.size)%}</p>
+			{% if (!o.files.error) { %}
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+			{% } %}
+			</td>
+			<td>
+			{% if (!o.files.error && !i && !o.options.autoUpload) { %}
+			<button class="btn btn-primary start">
+			<i class="glyphicon glyphicon-upload"></i>
+			<span>Start</span>
+			</button>
+			{% } %}
+			{% if (!i) { %}
+			<button class="btn btn-warning cancel">
+			<i class="glyphicon glyphicon-ban-circle"></i>
+			<span>Cancel</span>
+			</button>
+			{% } %}
+			</td>
+			</tr>
+			{% } %}
+		</script>
+		<!-- The template to display files available for download -->
+		<script id="template-download" type="text/x-tmpl">
+			{% for (var i=0, file; file=o.files[i]; i++) { %}
+			<tr class="template-download fade">
+			<td>
+			<span class="preview">
+			{% if (file.thumbnailUrl) { %}
+			<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+			{% } %}
+			</span>
+			</td>
+			<td>
+			<p class="name">
+			{% if (file.url) { %}
+			<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+			{% } else { %}
+			<span>{%=file.name%}</span>
+			{% } %}
+			</p>
+			{% if (file.error) { %}
+			<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+			{% } %}
+			</td>
+			<td>
+			<span class="size">{%=o.formatFileSize(file.size)%}</span>
+			</td>
+			<td>
+			{% if (file.deleteUrl) { %}
+			<button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+			<i class="glyphicon glyphicon-trash"></i>
+			<span>Delete</span>
+			</button>
+			<input type="checkbox" name="delete" value="1" class="toggle">
+			{% } else { %}
+			<button class="btn btn-warning cancel">
+			<i class="glyphicon glyphicon-ban-circle"></i>
+			<span>Cancel</span>
+			</button>
+			{% } %}
+			</td>
+			</tr>
+			{% } %}
+		</script>
+		<script src="vendor/jquery-file-upload/vendor/jquery.ui.widget.js"></script>
+		<!-- The Templates plugin is included to render the upload/download listings -->
+		<script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+		<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+		<script src="vendor/javascript-Load-Image/load-image.all.min.js"></script>
+		<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+		<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+		<!-- blueimp Gallery script -->
+		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+		<script src="vendor/jquery-file-upload/jquery.iframe-transport.js"></script>
+		<!-- The basic File Upload plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload.js"></script>
+		<!-- The File Upload processing plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-process.js"></script>
+		<!-- The File Upload image preview & resize plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-image.js"></script>
+		<!-- The File Upload audio preview plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-audio.js"></script>
+		<!-- The File Upload video preview plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-video.js"></script>
+		<!-- The File Upload validation plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-validate.js"></script>
+		<!-- The File Upload user interface plugin -->
+		<script src="vendor/jquery-file-upload/jquery.fileupload-ui.js"></script>
+		<!-- The main application script -->
+		<script src="vendor/jquery-file-upload/main.js"></script>
+		<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+		<!--[if (gte IE 8)&(lt IE 10)]>
+<script src="js/cors/jquery.xdr-transport.js"></script>
+<![endif]-->
+
+		<script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+		<script src="vendor/autosize/autosize.min.js"></script>
+		<script src="vendor/selectFx/classie.js"></script>
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+
+		<!-- kill after clear form elemets event handlers of this page  -->
+		<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
+		<script src="vendor/selectFx/selectFx.js"></script>
+		<script src="vendor/select2/select2.min.js"></script>
+		<script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+		<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
+
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
-		<!--		<script src="assets/js/table-data.js"></script>-->
-		<script src="assets/js/4com-user_edit.js"></script>
-		<!--
-<script src="assets/js/form-validation.js"></script>
-<script src="assets/js/form-elements.js"></script>
--->
+		<!-- start: JavaScript Event Handlers for this page -->
+		<script src="assets/js/form-elements.js"></script>
+		<script src="assets/js/4com-product_add.js"></script>
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				FormValidator.init();
+				FormElements.init();
+				add_product.init();
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->

@@ -1,24 +1,12 @@
 /* #validation
 ********************/
-var edit_order = function () {
+var add_product = function () {
 	"use strict";
-	var validateCheckRadio = function (val) {
-		$("input[type='radio'], input[type='checkbox']").on('ifChecked', function(event) {
-			$(this).parent().closest(".has-error").removeClass("has-error").addClass("has-success").find(".help-block").hide().end().find('.symbol').addClass('ok');
-		});
-	};
 	// function to initiate Validation Sample 1
 	var runValidator1 = function () {
-		var form1 = $('#form_editorder');
+		var form1 = $('#form_addproduct');
 		var errorHandler1 = $('.errorHandler', form1);
 		var successHandler1 = $('.successHandler', form1);
-		$.validator.addMethod(
-			"customDate",
-			function(value, element) {
-				// put your own logic here, this is just a (crappy) example
-				return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
-			}
-		);
 		$.validator.addMethod(
 			"money",
 			function(value, element) {
@@ -26,7 +14,7 @@ var edit_order = function () {
 				return value.match(/^\d{0,9}(\.\d{0,9})?$/);
 			}
 		);
-		$('#form_editorder').validate({
+		$('#form_addproduct').validate({
 			errorElement: "span", // contain the error msg in a span tag
 			errorClass: 'help-block',
 			errorPlacement: function (error, element) { // render error placement for each input type
@@ -35,49 +23,42 @@ var edit_order = function () {
 			},
 			ignore: "",
 			rules: {
-				orderdate: {
-					customDate : true
-				},
-				orderprice: {
+				productname: {
 					required: true,
-					min: 0,
-					money: true
+					minlength: 3
 				},
-				orderstatus: {
-					required: true
-				},
-				productid: {
+				productprice: {
 					required: true,
+					money: true,
 					min: 0
 				},
-				creditappies: {
+				productdetails: {
+					required: true,
+					minlength: 10
+				},
+				rewardpoints: {
 					required: true,
 					min: 0
-				},
-				prefdate: {
-					customDate : true
-				},
-				prefsession: {
-					required: true
-				},
-				emptybottle: {
-					required: true,
-					min: 0
-				},
-				receivedby: {
-					required: true
 				}
 			},
 			messages: {
-				orderdate: "Please enter a date in the format dd/mm/yyyy",
-				orderprice: "Please enter a price in the format 666.66",
-				orderstatus: "Please select your order status",
-				productid: "Please select the product id",
-				creditappies: "Please enter a credit appies",
-				prefdate: "Please enter a date in the format dd/mm/yyyy",
-				prefsession: "Please select the session more comfortable for client",
-				emptybottle: "Please enter the number of empty bottles",
-				receivedby: "Please enter the recipient's"
+				productname: {
+					required: "Please enter a product name",
+					minlength: "Product name must be longer than 2 characters"
+				},
+				productprice: {
+					required: "Please enter a product price",
+					min: "Price of the product can not be negative",
+					money: "Please enter a price in the format 666.66"
+				},
+				productdetails: {
+					required: "Please enter a product details",
+					minlength: "Product details must be longer than 10 characters"
+				},
+				rewardpoints: {
+					required: "Please enter a product reward points",
+					min: "Reward points are the product can not be negative"
+				}
 			},
 			invalidHandler: function (event, validator) { //display error alert on form submit
 				successHandler1.hide();
@@ -102,24 +83,14 @@ var edit_order = function () {
 				successHandler1.show();
 				errorHandler1.hide();
 				// submit form
-				$('#form_editorder').submit();
+				$('#form_addproduct').submit();
 			}
 		});
-	};
-	//function to init datepicker
-	var datePickerHandler = function() {
-		$('.datepicker').datepicker({
-			autoclose: true,
-			todayHighlight: true
-		});
-
 	};
 	return {
 		//main function to initiate template pages
 		init: function () {
-			validateCheckRadio();
 			runValidator1();
-			datePickerHandler();
 		}
 	};
 }();
