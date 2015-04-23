@@ -162,3 +162,12 @@ th.no-sort {
 .home-table { //table wrapper
 	margin-bottom: 50px;
 }
+
+/* ---------------------------------------------------------------------- */
+/*  Tables - user list page
+/* ---------------------------------------------------------------------- */
+#userlist-page {
+	a[tooltip="Remove"] {
+		display: none;
+	}
+}
