@@ -128,10 +128,11 @@ var FormValidator = function () {
 				$(element).closest('.form-group').removeClass('has-error').addClass('has-success').find('.symbol').removeClass('required').addClass('ok');
 			},
 			submitHandler: function (form) {
-				successHandler1.show();
-				errorHandler1.hide();
+				//				successHandler1.show();
+				//				errorHandler1.hide();
 				// submit form
-				$('#form_useredit').submit();
+				//				$('#form_useredit').submit();
+				form.submit();
 			}
 		});
 	};

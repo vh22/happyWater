@@ -102,7 +102,8 @@ var edit_order = function () {
 				successHandler1.show();
 				errorHandler1.hide();
 				// submit form
-				$('#form_editorder').submit();
+				//				$('#form_editorder').submit();
+				form.submit();
 			}
 		});
 	};

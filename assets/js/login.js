@@ -69,7 +69,8 @@ var Login = function() {
 			},
 			submitHandler : function(form) {
 				errorHandler2.hide();
-				form2.submit();
+				//				form2.submit();
+				form.submit();
 			},
 			invalidHandler : function(event, validator) {//display error alert on form submit
 				errorHandler2.show();
@@ -115,7 +116,7 @@ var Login = function() {
 			},
 			submitHandler : function(form) {
 				errorHandler3.hide();
-				form3.submit();
+				form.submit();
 			},
 			invalidHandler : function(event, validator) {//display error alert on form submit
 				errorHandler3.show();
