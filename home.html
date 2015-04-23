@@ -226,8 +226,48 @@
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>
 						</a>
+						<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<i class="ti-view-grid"></i>
+						</a>
 					</div>
 					<!-- end: NAVBAR HEADER -->
+					<!-- start: NAVBAR COLLAPSE -->
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-right">
+							<!-- start: USER OPTIONS DROPDOWN -->
+							<li class="dropdown current-user">
+								<a href class="dropdown-toggle" data-toggle="dropdown">
+									<img src="http://dummyimage.com/50/99cccc/ffffff.gif&text=The+image!" /> <span class="username">Yuriy Markov <i class="ti-angle-down"></i></span>
+								</a>
+								<ul class="dropdown-menu dropdown-dark">
+									<li>
+										<a href="pages_user_profile.html">
+											My Profile
+										</a>
+									</li>
+									<li>
+										<a href="login_lockscreen.html">
+											Lock Screen
+										</a>
+									</li>
+									<li>
+										<a href="login_signin.html">
+											Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: USER OPTIONS DROPDOWN -->
+						</ul>
+						<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+						<div class="close-handle visible-xs-block menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<div class="arrow-left"></div>
+							<div class="arrow-right"></div>
+						</div>
+						<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+					</div>
+					<!-- end: NAVBAR COLLAPSE -->
 				</header>
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >

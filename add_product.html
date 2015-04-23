@@ -34,11 +34,11 @@
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		<!-- end: CLIP-TWO CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="vendor/jquery-file-upload/css/jquery.fileupload-ui.css">
+		<link href="vendor/bootstrap-fileinput/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
-	<body id="edit-order-page">
+	<body id="add-product-page">
 		<div id="app">
 			<!-- sidebar -->
 			<div class="sidebar app-aside" id="sidebar">
@@ -259,40 +259,6 @@
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-										<!-- Redirect browsers with JavaScript disabled to the origin page -->
-										<noscript>
-											<input type="hidden" name="redirect" value="http://blueimp.github.io/jQuery-File-Upload/">
-										</noscript>
-										<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-										<div class="row fileupload-buttonbar">
-											<div class="col-lg-7">
-												<!-- The fileinput-button span is used to style the file input field as button -->
-												<span class="btn btn-success fileinput-button"> <i class="glyphicon glyphicon-plus"></i> <span>Add product image</span>
-													<input type="file" name="files[]" multiple>
-												</span>
-												<!-- The loading indicator is shown during file processing -->
-												<span class="fileupload-loading"></span>
-											</div>
-											<!-- The global progress information -->
-											<div class="col-lg-5 fileupload-progress fade">
-												<!-- The global progress bar -->
-												<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-													<div class="progress-bar progress-bar-success" style="width:0%;"></div>
-												</div>
-												<!-- The extended global progress information -->
-												<div class="progress-extended">
-													&nbsp;
-												</div>
-											</div>
-										</div>
-										<!-- The table listing the files available for upload/download -->
-										<table role="presentation" class="table table-striped">
-											<tbody class="files"></tbody>
-										</table>
-									</form>
-								</div>
-								<div class="col-md-12">
 									<form action="#" role="form" id="form_addproduct">
 										<div class="row">
 											<div class="col-md-12">
@@ -308,36 +274,63 @@
 													<legend>
 														Product data
 													</legend>
-													<div class="col-sm-12">
-														<div class="form-group col-sm-6 col-md-5 col-lg-4">
-															<label for="newProdutId">
-																Product id
-															</label>
-															<input type="text" placeholder="New Id" value="" name="newProdutId" id="newProdutId" class="form-control" readonly>
-														</div>
-														<div class="form-group col-sm-6 col-md-5 col-lg-4">
-															<label for="productname">
-																Product name <span class="symbol required"></span>
-															</label>
-															<input type="text" placeholder="Enter a product name" name="productname" id="productname" class="form-control">
-														</div>
-														<div class="form-group col-sm-6 col-md-5 col-lg-4">
-															<label for="productprice">
-																Product price <span class="symbol required"></span>
-															</label>
-															<input type="number" min="0" placeholder="Enter a product price" name="productprice" id="productprice" class="form-control">
-														</div>
-														<div class="form-group col-sm-6 col-md-5 col-lg-4">
-															<label for="productdetails">
-																Product details <span class="symbol required"></span>
-															</label>
-															<textarea id="productdetails" name="productdetails" class="form-control autosize area-animated"></textarea>
-														</div>
-														<div class="form-group col-sm-6 col-md-5 col-lg-4">
-															<label for="rewardpoints">
-																Reward points <span class="symbol required"></span>
-															</label>
-															<input type="number" min="0" placeholder="Enter a reward points" name="rewardpoints" id="rewardpoints" class="form-control">
+													<div class="col-md-12">
+														<div class="row">
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label for="newProdutId">
+																		Product id
+																	</label>
+																	<input type="text" placeholder="New Id" value="" name="newProdutId" id="newProdutId" class="form-control" readonly>
+																</div>
+																<div class="form-group">
+																	<label for="productprice">
+																		Product price <span class="symbol required"></span>
+																	</label>
+																	<input type="number" min="0" placeholder="Enter a product price" name="productprice" id="productprice" class="form-control">
+																</div>
+																<div class="form-group">
+																	<label for="productdetails">
+																		Product details <span class="symbol required"></span>
+																	</label>
+																	<textarea id="productdetails" name="productdetails" class="form-control autosize area-animated"></textarea>
+																</div>
+																<div class="form-group">
+																	<label for="rewardpoints">
+																		Reward points <span class="symbol required"></span>
+																	</label>
+																	<input type="number" min="0" placeholder="Enter a reward points" name="rewardpoints" id="rewardpoints" class="form-control">
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="row">
+																	<div class="form-group col-md-12">
+																		<label for="productname">
+																			Product name <span class="symbol required"></span>
+																		</label>
+																		<input type="text" placeholder="Enter a product name" name="productname" id="productname" class="form-control">
+																	</div>
+																	<div class="form-group col-md-12">
+																		<label>
+																			Thumbnail Image Upload
+																		</label>
+																		<div class="fileinput fileinput-new" data-provides="fileinput">
+																			<div class="fileinput-new thumbnail">
+																				<img src="http://dummyimage.com/150/99cccc/ffffff.gif&text=The+image!" />
+																			</div>
+																			<div class="fileinput-preview fileinput-exists thumbnail"></div>
+																			<div class="user-edit-image-buttons">
+																				<span class="btn btn-azure btn-file"><span class="fileinput-new"><i class="fa fa-picture"></i> Select image</span><span class="fileinput-exists"><i class="fa fa-picture"></i> Change</span>
+																					<input type="file">
+																				</span>
+																				<a href="#" class="btn fileinput-exists btn-red" data-dismiss="fileinput">
+																					<i class="fa fa-times"></i> Remove
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
 														</div>
 														<div class="col-md-12">
 															<hr>
@@ -380,122 +373,11 @@
 		<script src="vendor/switchery/switchery.min.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- The basic File Upload plugin -->
-		<!-- The template to display files available for upload -->
-		<script id="template-upload" type="text/x-tmpl">
-			{% for (var i=0, file; file=o.files[i]; i++) { %}
-			<tr class="template-upload fade">
-			<td>
-			<span class="preview"></span>
-			</td>
-			<td>
-			<p class="name">{%=file.name%}</p>
-			{% if (file.error) { %}
-			<div><span class="label label-danger">Error</span> {%=file.error%}</div>
-			{% } %}
-			</td>
-			<td>
-			<p class="size">{%=o.formatFileSize(file.size)%}</p>
-			{% if (!o.files.error) { %}
-			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-			{% } %}
-			</td>
-			<td>
-			{% if (!o.files.error && !i && !o.options.autoUpload) { %}
-			<button class="btn btn-primary start">
-			<i class="glyphicon glyphicon-upload"></i>
-			<span>Start</span>
-			</button>
-			{% } %}
-			{% if (!i) { %}
-			<button class="btn btn-warning cancel">
-			<i class="glyphicon glyphicon-ban-circle"></i>
-			<span>Cancel</span>
-			</button>
-			{% } %}
-			</td>
-			</tr>
-			{% } %}
-		</script>
-		<!-- The template to display files available for download -->
-		<script id="template-download" type="text/x-tmpl">
-			{% for (var i=0, file; file=o.files[i]; i++) { %}
-			<tr class="template-download fade">
-			<td>
-			<span class="preview">
-			{% if (file.thumbnailUrl) { %}
-			<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-			{% } %}
-			</span>
-			</td>
-			<td>
-			<p class="name">
-			{% if (file.url) { %}
-			<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-			{% } else { %}
-			<span>{%=file.name%}</span>
-			{% } %}
-			</p>
-			{% if (file.error) { %}
-			<div><span class="label label-danger">Error</span> {%=file.error%}</div>
-			{% } %}
-			</td>
-			<td>
-			<span class="size">{%=o.formatFileSize(file.size)%}</span>
-			</td>
-			<td>
-			{% if (file.deleteUrl) { %}
-			<button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-			<i class="glyphicon glyphicon-trash"></i>
-			<span>Delete</span>
-			</button>
-			<input type="checkbox" name="delete" value="1" class="toggle">
-			{% } else { %}
-			<button class="btn btn-warning cancel">
-			<i class="glyphicon glyphicon-ban-circle"></i>
-			<span>Cancel</span>
-			</button>
-			{% } %}
-			</td>
-			</tr>
-			{% } %}
-		</script>
-		<script src="vendor/jquery-file-upload/vendor/jquery.ui.widget.js"></script>
-		<!-- The Templates plugin is included to render the upload/download listings -->
-		<script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
-		<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-		<script src="vendor/javascript-Load-Image/load-image.all.min.js"></script>
-		<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-		<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-		<!-- blueimp Gallery script -->
-		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-		<script src="vendor/jquery-file-upload/jquery.iframe-transport.js"></script>
-		<!-- The basic File Upload plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload.js"></script>
-		<!-- The File Upload processing plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-process.js"></script>
-		<!-- The File Upload image preview & resize plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-image.js"></script>
-		<!-- The File Upload audio preview plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-audio.js"></script>
-		<!-- The File Upload video preview plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-video.js"></script>
-		<!-- The File Upload validation plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-validate.js"></script>
-		<!-- The File Upload user interface plugin -->
-		<script src="vendor/jquery-file-upload/jquery.fileupload-ui.js"></script>
-		<!-- The main application script -->
-		<script src="vendor/jquery-file-upload/main.js"></script>
-		<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
-		<!--[if (gte IE 8)&(lt IE 10)]>
-<script src="js/cors/jquery.xdr-transport.js"></script>
-<![endif]-->
-
 		<script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 		<script src="vendor/autosize/autosize.min.js"></script>
 		<script src="vendor/selectFx/classie.js"></script>
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+		<script src="vendor/bootstrap-fileinput/jasny-bootstrap.js"></script>
 
 		<!-- kill after clear form elemets event handlers of this page  -->
 		<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>

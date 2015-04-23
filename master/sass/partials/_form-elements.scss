@@ -1249,3 +1249,15 @@ input[type="radio"], input[type="checkbox"] {
 		vertical-align: top;
 	}
 }
+
+/* ---------------------------------------------------------------------- */
+/*  Forms - add product
+/* ---------------------------------------------------------------------- */
+#add-product-page {
+	.thumbnail-min-wrapper {
+		.thumbnail {
+			width: auto;
+			padding: 3px 15px;
+		}
+	}
+}
