@@ -171,3 +171,15 @@ th.no-sort {
 		display: none;
 	}
 }
+
+/* ---------------------------------------------------------------------- */
+/*  Tables - product list page
+/* ---------------------------------------------------------------------- */
+#product-list-page {
+	td {
+		img {
+			max-width: 100px !important;
+			max-height: 100px !important;
+		}
+	}
+}

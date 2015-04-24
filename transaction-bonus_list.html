@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Product list</title>
+		<title>Transaction list</title>
 		<!-- start: META -->
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta charset="utf-8" />
@@ -39,7 +39,7 @@
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
-	<body id="product-list-page">
+	<body>
 		<div id="app">
 			<!-- sidebar -->
 			<div class="sidebar app-aside" id="sidebar">
@@ -74,7 +74,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="active open">
+							<li>
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -86,7 +86,7 @@
 									</div>
 								</a>
 								<ul class="sub-menu">
-									<li class="active">
+									<li>
 										<a href="product_list.html">
 											<span class="title"> Product list </span>
 										</a>
@@ -122,7 +122,7 @@
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li class="active open">
 								<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
@@ -134,7 +134,7 @@
 									</div>
 								</a>
 								<ul class="sub-menu">
-									<li>
+									<li class="active">
 										<a href="transaction_list.html">
 											<span class="title">Transaction list</span>
 										</a>
@@ -246,11 +246,8 @@
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Product list</h1>
+									<h1 class="mainTitle">Transactions</h1>
 									<span class="mainDescription">overview &amp; stats</span>
-								</div>
-								<div class="col-sm-4">
-									<a href="add_product.html" class="btn-green btn-lg pull-right">Add product</a>
 								</div>
 							</div>
 						</section>
@@ -260,35 +257,31 @@
 							<div class="row">
 								<div class="col-md-12 home-table">
 									<div class="table-responsive">
-										<table class="table table-hover table-bordered table-striped" id="table-products">
+										<table class="table table-hover table-bordered table-striped" id="table-transaction">
 											<thead>
 												<tr>
-													<th>Product image</th>
-													<th>Product id</th>
-													<th>Product name</th>
-													<th>Product price</th>
-													<th>Product details</th>
+													<th>User</th>
 													<th>Reward points</th>
+													<th>Order number</th>
+													<th>Type</th>
+													<th>Comment</th>
 													<th></th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/500x300/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Negative</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -298,7 +291,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -313,20 +306,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -336,7 +326,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -351,20 +341,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Negative</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -374,7 +361,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -389,20 +376,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -412,7 +396,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -427,20 +411,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Negative</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -450,7 +431,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -465,20 +446,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -488,7 +466,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -503,20 +481,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Negative</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -526,7 +501,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -541,20 +516,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -564,7 +536,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -579,20 +551,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Negative</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -602,7 +571,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -617,20 +586,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -640,7 +606,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -655,20 +621,17 @@
 												</tr>
 												<tr>
 													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+														User name
 													</td>
 													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
+														20
 													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
+													<td>10293847561</td>
+													<td>Positive</td>
+													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi.</td>
 													<td class="center">
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="edit_transaction.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -678,83 +641,7 @@
 																</button>
 																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="order_edit.html">
-																			Edit
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#">
-																			Remove
-																		</a>
-																	</li>
-																</ul>
-															</div>
-														</div></td>
-												</tr>
-												<tr>
-													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
-													</td>
-													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
-													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
-													<td class="center">
-														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
-															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
-														</div>
-														<div class="visible-xs visible-sm hidden-md hidden-lg">
-															<div class="btn-group" dropdown is-open="status.isopen">
-																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
-																</button>
-																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="order_edit.html">
-																			Edit
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#">
-																			Remove
-																		</a>
-																	</li>
-																</ul>
-															</div>
-														</div></td>
-												</tr>
-												<tr>
-													<td>
-														<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
-													</td>
-													<td>
-														<a href="#" rel="nofollow" target="_blank">
-															13180836958
-														</a>
-													</td>
-													<td>3 gallon</td>
-													<td>2.00</td>
-													<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-													<td>20</td>
-													<td class="center">
-														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="order_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
-															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
-														</div>
-														<div class="visible-xs visible-sm hidden-md hidden-lg">
-															<div class="btn-group" dropdown is-open="status.isopen">
-																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
-																</button>
-																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="order_edit.html">
+																		<a href="edit_transaction.html">
 																			Edit
 																		</a>
 																	</li>
@@ -806,11 +693,11 @@
 		<script src="assets/js/main.js"></script>
 		<!-- start: JavaScript Event Handlers for this page -->
 		<!--		<script src="assets/js/table-data.js"></script>-->
-		<script src="assets/js/4com-product_list.js"></script>
+		<script src="assets/js/4com_transaction_list.js"></script>
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				product_list.init();
+				transaction_list.init();
 			});
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->
