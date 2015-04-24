@@ -275,55 +275,29 @@
 													<legend>
 														Order data
 													</legend>
-													<div class="col-sm-6 col-md-5 col-lg-4">
+													<div class="col-sm-6">
 														<div class="form-group">
-															<label for="orderdate">
-																Order Date <span class="symbol required"></span>
+															<label for="orderuser">
+																User <span class="symbol required"></span>
 															</label>
-															<p class="input-group input-append datepicker date">
-																<input name="orderdate" id="orderdate" type="text" class="form-control"/>
-																<span class="input-group-btn">
-																	<button type="button" class="btn btn-default">
-																		<i class="glyphicon glyphicon-calendar"></i>
-																	</button> </span>
-															</p>
-														</div>
-														<div class="form-group">
-															<label for="orderprice">
-																Order price <span class="symbol required"></span>
-															</label>
-															<input type="number" min="0" placeholder="Enter a price" name="orderprice" id="orderprice" class="form-control">
-														</div>
-														<div class="form-group">
-															<label for="orderstatus">
-																Order status <span class="symbol required"></span>
-															</label>
-															<select name="orderstatus" id="orderstatus" class="form-control">
-																<option value="" disabled selected>Select a status</option>
-																<option value="Delivered">Delivered</option>
-																<option value="Confirmed">Confirmed</option>
-																<option value="Pending">Pending</option>
+															<select name="orderuser" id="orderuser" class="form-control">
+																<option value="" disabled selected>Select a user</option>
+																<option value="Vasya">Vasya</option>
+																<option value="Rodion">Rodion</option>
+																<option value="Jennifer">Jennifer</option>
 															</select>
 														</div>
 														<div class="form-group">
-															<label for="productid">
-																Product id <span class="symbol required"></span>
+															<label for="orderdriver">
+																Driver <span class="symbol required"></span>
 															</label>
-															<select name="productid" id="productid" class="form-control">
-																<option value="" disabled selected>Select a product id</option>
-																<option value="1">1</option>
-																<option value="2">2</option>
-																<option value="3">3</option>
+															<select name="orderdriver" id="orderdriver" class="form-control">
+																<option value="" disabled selected>Select a driver</option>
+																<option value="Driver1">Driver1</option>
+																<option value="Driver2">Driver2</option>
+																<option value="Driver3">Driver3</option>
 															</select>
 														</div>
-														<div class="form-group">
-															<label for="creditappies">
-																Credit appies <span class="symbol required"></span>
-															</label>
-															<input type="number" min="0" placeholder="Enter a credit appies" name="creditappies" id="creditappies" class="form-control">
-														</div>
-													</div>
-													<div class="col-sm-6 col-md-5 col-lg-4">
 														<div class="form-group">
 															<label for="prefdate">
 																Preferred Date <span class="symbol required"></span>
@@ -358,13 +332,194 @@
 															</label>
 															<input type="text" placeholder="Enter the name of the recipient" name="receivedby" id="receivedby" class="form-control">
 														</div>
+														<div class="form-group">
+															<label for="orderstatus">
+																Order status <span class="symbol required"></span>
+															</label>
+															<select name="orderstatus" id="orderstatus" class="form-control">
+																<option value="" disabled selected>Select a status</option>
+																<option value="Delivered">Delivered</option>
+																<option value="Confirmed">Confirmed</option>
+																<option value="Pending">Pending</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-6">
+														<div class="form-group">
+															<label for="orderdate">
+																Order Date <span class="symbol required"></span>
+															</label>
+															<p class="input-group input-append datepicker date">
+																<input name="orderdate" id="orderdate" type="text" class="form-control"/>
+																<span class="input-group-btn">
+																	<button type="button" class="btn btn-default">
+																		<i class="glyphicon glyphicon-calendar"></i>
+																	</button> </span>
+															</p>
+														</div>
+														<div class="form-group">
+															<label for="orderprice">
+																Order price <span class="symbol required"></span>
+															</label>
+															<input type="text" min="0" placeholder="Order price" name="orderprice" id="orderprice" class="form-control" readonly>
+														</div>
+														<div class="form-group">
+															<label for="productid">
+																Product id <span class="symbol required"></span>
+															</label>
+															<input type="text" placeholder="Product id" name="productid" id="productid" class="form-control" readonly>
+														</div>
+														<div class="form-group">
+															<label for="creditappies">
+																Credit appies <span class="symbol required"></span>
+															</label>
+															<input type="text" min="0" placeholder="Credit appies" name="creditappies" id="creditappies" class="form-control" readonly>
+														</div>
+														<div class="form-group">
+															<label for="latitude">
+																Latitude <span class="symbol required"></span>
+															</label>
+															<input type="text" placeholder="Enter a latitude" name="latitude" id="latitude" class="form-control">
+														</div>
+														<div class="form-group">
+															<label for="longitude">
+																Longitude <span class="symbol required"></span>
+															</label>
+															<input type="text" placeholder="Enter a longitude" name="longitude" id="longitude" class="form-control">
+														</div>
+														<div class="form-group col-md-12">
+															<button class="btn-lg btn-primary btn-wide pull-right margin-top-15" type="submit">
+																Update <i class="fa fa-arrow-circle-right"></i>
+															</button>
+														</div>
 													</div>
 													<div class="col-md-12">
 														<hr>
-														<p class="pull-left">By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions</p>
-														<button class="btn btn-primary btn-wide pull-right" type="submit">
-															Update <i class="fa fa-arrow-circle-right"></i>
-														</button>
+														<!-- start: DYNAMIC TABLE -->
+														<div class="container-fluid container-fullw bg-white">
+															<div class="row">
+																<div class="col-md-12 home-table">
+																	<div class="table-responsive">
+																		<table class="table table-hover table-bordered table-striped" id="table-products">
+																			<thead>
+																				<tr>
+																					<th>Product image</th>
+																					<th>Product id</th>
+																					<th>Product name</th>
+																					<th>Product price</th>
+																					<th>Quantity</th>
+																					<th>Product details</th>
+																					<th>Reward points</th>
+																					<th></th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>
+																						<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+																					</td>
+																					<td>
+																						<a href="#" rel="nofollow" target="_blank">
+																							13180836958
+																						</a>
+																					</td>
+																					<td>3 gallon</td>
+																					<td>2.00</td>
+																					<td>2</td>
+																					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
+																					<td>20</td>
+																					<td class="center">
+																						<div class="visible-md visible-lg hidden-sm hidden-xs">
+																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+																						</div>
+																						<div class="visible-xs visible-sm hidden-md hidden-lg">
+																							<div class="btn-group" dropdown is-open="status.isopen">
+																								<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																									<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																								</button>
+																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																									<li>
+																										<a href="#">
+																											Remove
+																										</a>
+																									</li>
+																								</ul>
+																							</div>
+																						</div></td>
+																				</tr>
+																				<tr>
+																					<td>
+																						<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+																					</td>
+																					<td>
+																						<a href="#" rel="nofollow" target="_blank">
+																							13111136958
+																						</a>
+																					</td>
+																					<td>1 gallon</td>
+																					<td>0.50</td>
+																					<td>10</td>
+																					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
+																					<td>20</td>
+																					<td class="center">
+																						<div class="visible-md visible-lg hidden-sm hidden-xs">
+																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+																						</div>
+																						<div class="visible-xs visible-sm hidden-md hidden-lg">
+																							<div class="btn-group" dropdown is-open="status.isopen">
+																								<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																									<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																								</button>
+																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																									<li>
+																										<a href="#">
+																											Remove
+																										</a>
+																									</li>
+																								</ul>
+																							</div>
+																						</div></td>
+																				</tr>
+																				<tr>
+																					<td>
+																						<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
+																					</td>
+																					<td>
+																						<a href="#" rel="nofollow" target="_blank">
+																							13180833358
+																						</a>
+																					</td>
+																					<td>2 gallon</td>
+																					<td>1.00</td>
+																					<td>5</td>
+																					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
+																					<td>20</td>
+																					<td class="center">
+																						<div class="visible-md visible-lg hidden-sm hidden-xs">
+																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+																						</div>
+																						<div class="visible-xs visible-sm hidden-md hidden-lg">
+																							<div class="btn-group" dropdown is-open="status.isopen">
+																								<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																									<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																								</button>
+																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																									<li>
+																										<a href="#">
+																											Remove
+																										</a>
+																									</li>
+																								</ul>
+																							</div>
+																						</div></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- end: DYNAMIC TABLE -->
 													</div>
 												</fieldset>
 											</div>
