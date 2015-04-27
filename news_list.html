@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<!-- Template Name: Clip-Two - Responsive Client Template build with Twitter Bootstrap 3.x | Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	<head>
+		<title>News list</title>
+		<!-- start: META -->
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: GOOGLE FONTS -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+		<!-- end: GOOGLE FONTS -->
+		<!-- start: MAIN CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="vendor/themify-icons/themify-icons.min.css">
+		<link href="vendor/animate.css/animate.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/switchery/switchery.min.css" rel="stylesheet" media="screen">
+		<!-- end: MAIN CSS -->
+		<!-- start: CLIP-TWO CSS -->
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<link rel="stylesheet" href="assets/css/plugins.css">
+		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+		<!-- end: CLIP-TWO CSS -->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+		<link href="vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+	</head>
+	<!-- end: HEAD -->
+	<body id="newslist-page">
+		<div id="app">
+			<!-- sidebar -->
+			<div class="sidebar app-aside" id="sidebar">
+				<div class="sidebar-container perfect-scrollbar">
+					<nav>
+						<!-- start: MAIN NAVIGATION MENU -->
+						<div class="navbar-title">
+							<span>Main Navigation</span>
+						</div>
+						<ul class="main-navigation-menu">
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-user"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> User </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="user_list.html">
+											<span class="title"> User list </span>
+										</a>
+									</li>
+									<li>
+										<a href="user_edit.html">
+											<span class="title"> User page </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-pencil-alt"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Products </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="product_list.html">
+											<span class="title"> Product list </span>
+										</a>
+									</li>
+									<li class="active">
+										<a href="add_product.html">
+											<span class="title"> Add new product </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-user"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Orders </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="order_list.html">
+											<span class="title"> Order list </span>
+										</a>
+									</li>
+									<li>
+										<a href="order_edit.html">
+											<span class="title"> Order page </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-layers-alt"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Transactions </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="transaction_list.html">
+											<span class="title">Transaction list</span>
+										</a>
+									</li>
+									<li>
+										<a href="add_transaction.html">
+											<span class="title">Add transaction</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-package"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Info pages </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-folder"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> FAQ </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+								</ul>
+							</li>
+							<li class="active open">
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-menu-alt"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> News </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+									<li class="active">
+										<a href="news_list.html">
+											<span class="title"> News list </span>
+										</a>
+									</li>
+									<li>
+										<a href="news_page.html">
+											<span class="title"> News page </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-location-pin"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Report </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-pie-chart"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Statistics </span><i class="icon-arrow"></i>
+										</div>
+									</div>
+								</a>
+								<ul class="sub-menu">
+								</ul>
+							</li>
+						</ul>
+						<!-- end: MAIN NAVIGATION MENU -->
+					</nav>
+				</div>
+			</div>
+			<!-- / sidebar -->
+			<div class="app-content">
+				<!-- start: TOP NAVBAR -->
+				<header class="navbar navbar-default navbar-static-top">
+					<!-- start: NAVBAR HEADER -->
+					<div class="navbar-header">
+						<a href="#" class="sidebar-mobile-toggler pull-left hidden-md hidden-lg" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+							<i class="ti-align-justify"></i>
+						</a>
+						<a class="navbar-brand" href="home.html">
+							HAPPY WATER
+						</a>
+						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+							<i class="ti-align-justify"></i>
+						</a>
+						<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<i class="ti-view-grid"></i>
+						</a>
+					</div>
+					<!-- end: NAVBAR HEADER -->
+				</header>
+				<!-- end: TOP NAVBAR -->
+				<div class="main-content" >
+					<div class="wrap-content container" id="container">
+						<!-- start: PAGE TITLE -->
+						<section id="page-title">
+							<div class="row">
+								<div class="col-sm-8">
+									<h1 class="mainTitle">News List</h1>
+									<span class="mainDescription">overview &amp; stats</span>
+								</div>
+								<a href="news_page.html" class="btn-lg btn-green pull-right" type="button">Add news</a>
+							</div>
+						</section>
+						<!-- end: PAGE TITLE -->
+						<!-- start: DYNAMIC TABLE -->
+						<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover" id="news_list">
+											<thead>
+												<tr>
+													<th>Title</th>
+													<th>User</th>
+													<th>Date</th>
+													<th>Description</th>
+													<th class="no-sort"></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+												<tr>
+													<td>
+														<a href="news_page.html" rel="nofollow" target="_blank">
+															News title
+														</a>
+													</td>
+													<td>
+														<a href="user_edit.html" rel="nofollow" target="_blank">
+															User name
+														</a>
+													</td>
+													<td>25.12.2015</td>
+													<td>
+														<p class="news-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in est error eligendi, blanditiis ipsam.</p>
+													</td>
+													<td class="center">
+														<div class="visible-md visible-lg hidden-sm hidden-xs">
+															<a href="user_edit.html" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														</div>
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="btn-group" dropdown is-open="status.isopen">
+																<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
+																	<li>
+																		<a href="user_edit.html">
+																			Edit
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#">
+																			Remove
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: DYNAMIC TABLE -->
+					</div>
+				</div>
+			</div>
+			<!-- start: FOOTER -->
+			<footer>
+				<div class="footer-inner">
+					<div class="pull-left">
+
+					</div>
+					<div class="pull-right">
+						<span class="go-top"><i class="ti-angle-up"></i></span>
+					</div>
+				</div>
+			</footer>
+			<!-- end: FOOTER -->
+		</div>
+		<!-- start: MAIN JAVASCRIPTS -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/modernizr/modernizr.js"></script>
+		<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+		<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="vendor/switchery/switchery.min.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="vendor/select2/select2.min.js"></script>
+		<script src="vendor/DataTables/jquery.dataTables.min.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CLIP-TWO JAVASCRIPTS -->
+		<script src="assets/js/main.js"></script>
+		<!-- start: JavaScript Event Handlers for this page -->
+		<script src="assets/js/4com-news_list.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				news_list.init();
+			});
+		</script>
+		<!-- end: JavaScript Event Handlers for this page -->
+		<!-- end: CLIP-TWO JAVASCRIPTS -->
+	</body>
+</html>
