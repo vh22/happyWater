@@ -34,11 +34,12 @@
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		<!-- end: CLIP-TWO CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="vendor/jquery-file-upload/css/jquery.fileupload-ui.css">
+<!--		<link rel="stylesheet" href="vendor/jquery-file-upload/css/jquery.fileupload-ui.css">-->
+		<link href="vendor/bootstrap-fileinput/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 	</head>
 	<!-- end: HEAD -->
-	<body id="edit-order-page">
+	<body>
 		<div id="app">
 			<!-- sidebar -->
 			<div class="sidebar app-aside" id="sidebar">
@@ -276,6 +277,25 @@
 													</legend>
 													<div class="col-sm-12">
 														<div class="row">
+															<div class="form-group col-md-12">
+																<label>
+																	Thumbnail Image Upload
+																</label>
+																<div class="fileinput fileinput-new" data-provides="fileinput">
+																	<div class="fileinput-new thumbnail">
+																		<img src="http://dummyimage.com/150/99cccc/ffffff.gif&text=The+image!" />
+																	</div>
+																	<div class="fileinput-preview fileinput-exists thumbnail"></div>
+																	<div class="user-edit-image-buttons">
+																		<span class="btn btn-azure btn-file"><span class="fileinput-new"><i class="fa fa-picture"></i> Select image</span><span class="fileinput-exists"><i class="fa fa-picture"></i> Change</span>
+																			<input type="file">
+																		</span>
+																		<a href="#" class="btn fileinput-exists btn-red" data-dismiss="fileinput">
+																			<i class="fa fa-times"></i> Remove
+																		</a>
+																	</div>
+																</div>
+															</div>
 															<div class="form-group col-sm-6">
 																<label for="newstitle">
 																	Title <span class="symbol required"></span>
@@ -338,6 +358,7 @@
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
 		<script src="vendor/ckeditor/ckeditor.js"></script>
 		<script src="vendor/ckeditor/adapters/jquery.js"></script>
+		<script src="vendor/bootstrap-fileinput/jasny-bootstrap.js"></script>
 
 		<!-- kill after clear form elemets event handlers of this page  -->
 		<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
@@ -351,12 +372,10 @@
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
 		<!-- start: JavaScript Event Handlers for this page -->
-		<script src="assets/js/form-text-editor.js"></script>
 		<script src="assets/js/4com-news_page.js"></script>
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				TextEditor.init();
 				news_page.init();
 			});
 		</script>

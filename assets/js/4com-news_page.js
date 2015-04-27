@@ -58,10 +58,17 @@ var news_page = function () {
 			}
 		});
 	};
+
+	//function to initiate ckeditor
+	var ckEditorHandler = function() {
+		CKEDITOR.disableAutoInline = true;
+		$('textarea.ckeditor').ckeditor();
+	};
 	return {
 		//main function to initiate template pages
 		init: function () {
 			runValidator1();
+			ckEditorHandler();
 		}
 	};
 }();
