@@ -156,6 +156,13 @@ th.no-sort {
 	background: none !important;
 }
 
+td {
+	img {
+		max-width: 100px !important;
+		max-height: 100px !important;
+	}
+}
+
 /* ---------------------------------------------------------------------- */
 /*  Tables - home page
 /* ---------------------------------------------------------------------- */
@@ -175,11 +182,4 @@ th.no-sort {
 /* ---------------------------------------------------------------------- */
 /*  Tables - product list page
 /* ---------------------------------------------------------------------- */
-#product-list-page {
-	td {
-		img {
-			max-width: 100px !important;
-			max-height: 100px !important;
-		}
-	}
-}
+
