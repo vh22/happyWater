@@ -16,7 +16,8 @@ var edit_order = function () {
 			"customDate",
 			function(value, element) {
 				// put your own logic here, this is just a (crappy) example
-				return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+//				return value.match(/^\d\d?\-\d\d?\-\d\d\d\d$/);
+				return value.match(/^\d\d\d\d?\-\d\d?\-\d\d$/);
 			}
 		);
 		$.validator.addMethod(
@@ -110,6 +111,7 @@ var edit_order = function () {
 	//function to init datepicker
 	var datePickerHandler = function() {
 		$('.datepicker').datepicker({
+			format:  "yyyy-mm-dd",
 			autoclose: true,
 			todayHighlight: true
 		});
