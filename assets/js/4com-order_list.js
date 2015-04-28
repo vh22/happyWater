@@ -39,6 +39,23 @@ var order_list = function() {
 			var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
 			oTable.fnSetColumnVis(iCol, ( bVis ? false : true));
 		});
+
+		var dateRangeBlock = $(
+			'<div class="col-md-5">' +
+				'<div class="input-group input-daterange datepicker padding-top-0">' +
+					'<input type="text" class="form-control" placeholder="Start date"/>' +
+					'<span class="input-group-addon bg-primary">to</span>' +
+					'<input type="text" class="form-control" placeholder="End date"/>' +
+				'</div>' +
+			'</div>');
+
+		$('#orders-table_wrapper .dataTables_length').after(dateRangeBlock);
+
+		$('.datepicker').datepicker({
+			format:  "yyyy-mm-dd",
+			autoclose: true,
+			todayHighlight: true
+		});
 	};
 	return {
 		//main function to initiate template pages
