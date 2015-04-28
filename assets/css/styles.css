@@ -5729,6 +5729,14 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 /* ---------------------------------------------------------------------- */
+/*  Icons - order inner page
+/* ---------------------------------------------------------------------- */
+.modal-link {
+  color: #007AFF;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------- */
 /*  Buttons
 /* ---------------------------------------------------------------------- */
 .btn {
@@ -11029,6 +11037,33 @@ td .news-description {
   width: 100%;
   height: 100%;
   border-radius: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/*  Modals - edit order page
+/* ---------------------------------------------------------------------- */
+.product-modal .row > div {
+  float: none;
+  margin: 0 auto;
+}
+.product-modal .modal-content {
+  background: #fff;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+.product-modal .modal-title {
+  text-align: center;
+}
+.product-modal .modal-header, .product-modal .modal-footer {
+  border: none;
+}
+.product-modal .modal-footer button {
+  margin: 0 auto;
+  float: none;
+  display: block;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 /* ---------------------------------------------------------------------- */

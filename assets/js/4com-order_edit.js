@@ -16,7 +16,7 @@ var edit_order = function () {
 			"customDate",
 			function(value, element) {
 				// put your own logic here, this is just a (crappy) example
-//				return value.match(/^\d\d?\-\d\d?\-\d\d\d\d$/);
+				//				return value.match(/^\d\d?\-\d\d?\-\d\d\d\d$/);
 				return value.match(/^\d\d\d\d?\-\d\d?\-\d\d$/);
 			}
 		);
@@ -109,7 +109,7 @@ var edit_order = function () {
 		});
 	};
 	//function to init datepicker
-	var datePickerHandler = function() {
+	var datePickerHandler = function () {
 		$('.datepicker').datepicker({
 			format:  "yyyy-mm-dd",
 			autoclose: true,
@@ -117,12 +117,26 @@ var edit_order = function () {
 		});
 
 	};
+	//function to init custom inputs
+	var customInputs = function () {
+		$("input[name='new-product-quantity']").TouchSpin({
+			verticalbuttons: true,
+			verticalupclass: 'fa fa-plus',
+			verticaldownclass: 'fa fa-minus'
+		});
+		$("input[name='new-product-quantity']").TouchSpin({
+			verticalbuttons: true,
+			verticalupclass: 'fa fa-plus',
+			verticaldownclass: 'fa fa-minus'
+		});
+	}
 	return {
 		//main function to initiate template pages
 		init: function () {
 			validateCheckRadio();
 			runValidator1();
 			datePickerHandler();
+			customInputs();
 		}
 	};
 }();

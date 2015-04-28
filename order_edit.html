@@ -34,6 +34,7 @@
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		<!-- end: CLIP-TWO CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link href="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
 		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="screen">
 		<link href="vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -396,7 +397,9 @@
 													<div class="col-md-12">
 														<hr>
 														<!-- start: DYNAMIC TABLE -->
-														<a href="add_product.html" class="btn-lg btn-green" type="button">Add product</a>
+														<button class="btn-lg btn-green" type="button" data-toggle="modal" data-target=".add-product-modal">
+															Add product
+														</button>
 														<div class="container-fluid container-fullw bg-white">
 															<div class="row">
 																<div class="col-md-12 home-table">
@@ -431,6 +434,7 @@
 																					<td>20</td>
 																					<td class="center">
 																						<div class="visible-md visible-lg hidden-sm hidden-xs">
+																							<i class="fa fa-pencil modal-link" data-toggle="modal" data-target=".edit-product-modal"></i>
 																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 																						</div>
 																						<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -440,71 +444,10 @@
 																								</button>
 																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																									<li>
-																										<a href="#">
-																											Remove
+																										<a href="order_edit.html">
+																											Edit
 																										</a>
 																									</li>
-																								</ul>
-																							</div>
-																						</div></td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
-																					</td>
-																					<td>
-																						<a href="#" rel="nofollow" target="_blank">
-																							13111136958
-																						</a>
-																					</td>
-																					<td>1 gallon</td>
-																					<td>0.50</td>
-																					<td>10</td>
-																					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-																					<td>20</td>
-																					<td class="center">
-																						<div class="visible-md visible-lg hidden-sm hidden-xs">
-																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
-																						</div>
-																						<div class="visible-xs visible-sm hidden-md hidden-lg">
-																							<div class="btn-group" dropdown is-open="status.isopen">
-																								<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																									<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
-																								</button>
-																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
-																									<li>
-																										<a href="#">
-																											Remove
-																										</a>
-																									</li>
-																								</ul>
-																							</div>
-																						</div></td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<img src="http://dummyimage.com/100/99cccc/ffffff.gif&text=The+image!" />
-																					</td>
-																					<td>
-																						<a href="#" rel="nofollow" target="_blank">
-																							13180833358
-																						</a>
-																					</td>
-																					<td>2 gallon</td>
-																					<td>1.00</td>
-																					<td>5</td>
-																					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel incidunt dicta esse, deleniti iusto velit, nemo maiores suscipit quidem dolorum!</td>
-																					<td>20</td>
-																					<td class="center">
-																						<div class="visible-md visible-lg hidden-sm hidden-xs">
-																							<a href="#" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
-																						</div>
-																						<div class="visible-xs visible-sm hidden-md hidden-lg">
-																							<div class="btn-group" dropdown is-open="status.isopen">
-																								<button class="btn btn-primary btn-o btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																									<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
-																								</button>
-																								<ul class="dropdown-menu pull-right dropdown-light" role="menu" aria-labelledby="dLabel">
 																									<li>
 																										<a href="#">
 																											Remove
@@ -545,6 +488,84 @@
 				</div>
 			</footer>
 			<!-- end: FOOTER -->
+			<!-- start: MODALS WINDOWS-->
+			<div class="modal fade add-product-modal"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog product-modal">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2 class="modal-title" id="myModalLabel">Choose product and quantity</h2>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="form-group col-md-6 margin-bottom-10">
+									<label for="form-field-select-2">
+										Product
+									</label>
+									<select class="cs-select cs-skin-elastic">
+										<option value="1g">1 gallon</option>
+										<option value="2g">2 gallon</option>
+										<option value="3g">3 gallon</option>
+										<option value="4g">4 gallon</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label>
+										Quantity
+									</label>
+									<input id="new-product-quantity" type="text" value="0" name="new-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-lg btn-primary">
+								Ok
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade edit-product-modal"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog product-modal">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2 class="modal-title" id="myModalLabel">Edit product and quantity</h2>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="form-group col-md-6 margin-bottom-10">
+									<label for="form-field-select-2">
+										Product
+									</label>
+									<select class="cs-select cs-skin-elastic">
+										<option value="1g">1 gallon</option>
+										<option value="2g">2 gallon</option>
+										<option value="3g">3 gallon</option>
+										<option value="4g">4 gallon</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label>
+										Quantity
+									</label>
+									<input id="new-product-quantity" type="text" value="0" name="new-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-lg btn-primary">
+								Ok
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end: MODALS WINDOWS-->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<script src="vendor/jquery/jquery.min.js"></script>
@@ -556,12 +577,13 @@
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
-		<script src="vendor/select2/select2.min.js"></script>
+		<script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 		<script src="vendor/DataTables/jquery.dataTables.min.js"></script>
-		<script src="vendor/ckeditor/ckeditor.js"></script>
-		<script src="vendor/ckeditor/adapters/jquery.js"></script>
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
 		<script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+		<script src="vendor/selectFx/classie.js"></script>
+		<script src="vendor/selectFx/selectFx.js"></script>
+		<script src="vendor/select2/select2.min.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
