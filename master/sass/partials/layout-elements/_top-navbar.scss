@@ -207,10 +207,8 @@
 	}
 
 	.navbar-right {
-		.dropdown {
-			a {
-				line-height: 40px;
-			}
+		a {
+			line-height: 40px !important;
 		}
 
 		.log-out {

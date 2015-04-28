@@ -536,8 +536,8 @@ h5.over-title {
   -webkit-transform: translate3d(8px, 0px, 0px) rotate(10deg);
   transform: translate3d(8px, 0px, 0px) rotate(10deg);
 }
-.navbar .navbar-right .dropdown a {
-  line-height: 40px;
+.navbar .navbar-right a {
+  line-height: 40px !important;
 }
 .navbar .navbar-right .log-out a {
   border-left: 1px solid rgba(51, 51, 51, 0.5);
