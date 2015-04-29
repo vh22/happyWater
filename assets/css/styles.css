@@ -5666,6 +5666,12 @@ input[type="radio"], input[type="checkbox"] {
   background: #804C75;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* ---------------------------------------------------------------------- */
 /*  Forms - Edit order
 /* ---------------------------------------------------------------------- */

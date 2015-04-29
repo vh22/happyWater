@@ -1241,6 +1241,12 @@ input[type="radio"], input[type="checkbox"] {
 	background: $purple;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin:0;
+}
+
 /* ---------------------------------------------------------------------- */
 /*  Forms - Edit order
 /* ---------------------------------------------------------------------- */
