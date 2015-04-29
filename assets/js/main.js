@@ -109,8 +109,8 @@ var Main = function() {
 		$(document).on("mousedown touchstart", toggleNavbar);
 		function toggleNavbar(e) {
 			if(navbar.has(e.target).length === 0//checks if descendants of $box was clicked
-			&& !navbar.is(e.target)//checks if the $box itself was clicked
-			&& navbar.parent().hasClass("collapse in"))  {
+				 && !navbar.is(e.target)//checks if the $box itself was clicked
+				 && navbar.parent().hasClass("collapse in"))  {
 				collapseButton.trigger("click");
 				//$(document).off("mousedown touchstart", toggleNavbar);
 			}
@@ -167,8 +167,8 @@ var Main = function() {
 
 			var toggleOutside = function(e) {
 				if(outsideElement.has(e.target).length === 0//checks if descendants of $box was clicked
-				&& !outsideElement.is(e.target)//checks if the $box itself was clicked
-				&& !toggleAttribute.is(e.target) && toggleElement.hasClass(toggleClass)) {
+					 && !outsideElement.is(e.target)//checks if the $box itself was clicked
+					 && !toggleAttribute.is(e.target) && toggleElement.hasClass(toggleClass)) {
 
 					toggleElement.removeClass(toggleClass);
 					$(document).off("mousedown touchstart", toggleOutside);
@@ -320,17 +320,17 @@ var Main = function() {
 		$('body').on('click', '.panel-close', function(e) {
 			var panel = $(this).closest('.panel');
 
-                destroyPanel();
+			destroyPanel();
 
-                function destroyPanel() {
-                    var col = panel.parent();
-                    panel.fadeOut(300, function () {
-                        $(this).remove();
-                        if (col.is('[class*="col-"]') && col.children('*').length === 0) {
-                            col.remove();
-                        }
-                    });
-                }
+			function destroyPanel() {
+				var col = panel.parent();
+				panel.fadeOut(300, function () {
+					$(this).remove();
+					if (col.is('[class*="col-"]') && col.children('*').length === 0) {
+						col.remove();
+					}
+				});
+			}
 			e.preventDefault();
 		});
 		// panel refresh
@@ -357,14 +357,14 @@ var Main = function() {
 
 	};
 	// function to activate the Go-Top button
-    var goTopHandler = function(e) {
-        $('.go-top').on('click', function(e) {
-            $("html, body").animate({
-                scrollTop: 0
-            }, "slow");
-            e.preventDefault();
-        });
-    };
+	var goTopHandler = function(e) {
+		$('.go-top').on('click', function(e) {
+			$("html, body").animate({
+				scrollTop: 0
+			}, "slow");
+			e.preventDefault();
+		});
+	};
 	var customSelectHandler = function() {
 		[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
 			new SelectFx(el);
@@ -404,6 +404,15 @@ var Main = function() {
 		};
 	}
 
+	function customInputs () {
+		$("input[type='number']:not(input[readonly])").TouchSpin({
+			verticalbuttons: true,
+			verticalupclass: 'fa fa-plus',
+			verticaldownclass: 'fa fa-minus'
+		});
+		$('select').removeClass('form-control').addClass('cs-select cs-skin-elastic');
+	}
+
 	return {
 		init: function() {
 			settingsHandler();
@@ -421,6 +430,7 @@ var Main = function() {
 			panelToolsHandler();
 			customSelectHandler();
 			goTopHandler();
+			customInputs();
 		}
 	};
 }();

@@ -281,7 +281,7 @@
 															<label for="orderuser">
 																User <span class="symbol required"></span>
 															</label>
-															<select name="orderuser" id="orderuser" class="form-control">
+															<select name="orderuser" id="orderuser" class="cs-select cs-skin-elastic">
 																<option value="" disabled selected>Select a user</option>
 																<option value="Vasya">Vasya</option>
 																<option value="Rodion">Rodion</option>
@@ -292,7 +292,7 @@
 															<label for="orderdriver">
 																Driver <span class="symbol required"></span>
 															</label>
-															<select name="orderdriver" id="orderdriver" class="form-control">
+															<select name="orderdriver" id="orderdriver" class="cs-select cs-skin-elastic">
 																<option value="" disabled selected>Select a driver</option>
 																<option value="Driver1">Driver1</option>
 																<option value="Driver2">Driver2</option>
@@ -315,7 +315,7 @@
 															<label for="prefsession">
 																Preferred session <span class="symbol required"></span>
 															</label>
-															<select name="prefsession" id="prefsession" class="form-control">
+															<select name="prefsession" id="prefsession" class="cs-select cs-skin-elastic">
 																<option value="" disabled selected>Select a preferred session</option>
 																<option value="am">am</option>
 																<option value="pm">pm</option>
@@ -337,7 +337,7 @@
 															<label for="orderstatus">
 																Order status <span class="symbol required"></span>
 															</label>
-															<select name="orderstatus" id="orderstatus" class="form-control">
+															<select name="orderstatus" id="orderstatus" class="cs-select cs-skin-elastic">
 																<option value="" disabled selected>Select a status</option>
 																<option value="Delivered">Delivered</option>
 																<option value="Confirmed">Confirmed</option>
@@ -501,10 +501,10 @@
 						<div class="modal-body">
 							<div class="row">
 								<div class="form-group col-md-6 margin-bottom-10">
-									<label for="form-field-select-2">
+									<label for="new-product-name">
 										Product
 									</label>
-									<select class="cs-select cs-skin-elastic">
+									<select id="new-product-name" name="new-product-name" class="cs-select cs-skin-elastic">
 										<option value="1g">1 gallon</option>
 										<option value="2g">2 gallon</option>
 										<option value="3g">3 gallon</option>
@@ -515,7 +515,7 @@
 									<label>
 										Quantity
 									</label>
-									<input id="new-product-quantity" type="text" value="0" name="new-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
+									<input id="new-product-quantity" type="number" value="0" name="new-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
 								</div>
 							</div>
 						</div>
@@ -539,10 +539,10 @@
 						<div class="modal-body">
 							<div class="row">
 								<div class="form-group col-md-6 margin-bottom-10">
-									<label for="form-field-select-2">
+									<label for="edit-product-name">
 										Product
 									</label>
-									<select class="cs-select cs-skin-elastic">
+									<select id="edit-product-name" name="edit-product-name" class="cs-select cs-skin-elastic">
 										<option value="1g">1 gallon</option>
 										<option value="2g">2 gallon</option>
 										<option value="3g">3 gallon</option>
@@ -553,7 +553,7 @@
 									<label>
 										Quantity
 									</label>
-									<input id="new-product-quantity" type="text" value="0" name="new-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
+									<input id="edit-product-quantity" type="number" value="0" name="edit-product-quantity" touchspin data-verticalbuttons="true" data-verticalupclass="ti-angle-up" data-verticaldownclass="ti-angle-down">
 								</div>
 							</div>
 						</div>

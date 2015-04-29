@@ -124,7 +124,7 @@ var edit_order = function () {
 			verticalupclass: 'fa fa-plus',
 			verticaldownclass: 'fa fa-minus'
 		});
-		$("input[name='new-product-quantity']").TouchSpin({
+		$("input[name='edit-product-quantity']").TouchSpin({
 			verticalbuttons: true,
 			verticalupclass: 'fa fa-plus',
 			verticaldownclass: 'fa fa-minus'
