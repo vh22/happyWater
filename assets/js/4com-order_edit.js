@@ -117,8 +117,13 @@ var edit_order = function () {
 			errorElement: "span", // contain the error msg in a span tag
 			errorClass: 'help-block',
 			errorPlacement: function (error, element) { // render error placement for each input type
-				error.insertAfter(element);
-				// for other inputs, just perform default behavior
+				if(element.hasClass('cs-select')) {
+					var elementWrapper = element.closest('div.cs-select');
+					error.insertAfter(elementWrapper);
+				} else {
+					error.insertAfter(element);
+					// for other inputs, just perform default behavior
+				}
 			},
 			ignore: "",
 			rules: {
@@ -126,12 +131,16 @@ var edit_order = function () {
 					required: true
 				},
 				new_product_quantity: {
-					customDate : true
+					required : true,
+					min: 1
 				}
 			},
 			messages: {
 				new_product_name: "Please select product name",
-				new_product_quantity: "Please select product quantity"
+				new_product_quantity: {
+					required:	"Please select product quantity",
+					min:	"Please select product quantity"
+				}
 			},
 			invalidHandler: function (event, validator) { //display error alert on form submit
 				successHandler2.hide();
@@ -153,8 +162,6 @@ var edit_order = function () {
 				$(element).closest('.form-group').removeClass('has-error').addClass('has-success').find('.symbol').removeClass('required').addClass('ok');
 			},
 			submitHandler: function (form) {
-				successHandler2.show();
-				errorHandler2.hide();
 				form.submit();
 			}
 		});
