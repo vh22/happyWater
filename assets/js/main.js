@@ -405,12 +405,21 @@ var Main = function() {
 	}
 
 	function customInputs () {
-		$("input[type='number']:not(input[readonly])").TouchSpin({
+		$("input.integer").TouchSpin({
 			verticalbuttons: true,
 			verticalupclass: 'fa fa-plus',
 			verticaldownclass: 'fa fa-minus'
 		});
 		$('select').removeClass('form-control').addClass('cs-select cs-skin-elastic');
+		$("input.float").TouchSpin({
+			verticalbuttons: true,
+			verticalupclass: 'fa fa-plus',
+			verticaldownclass: 'fa fa-minus',
+			step: 0.1,
+			decimals: 2,
+			boostat: 5,
+			maxboostedstep: 10
+		});
 	}
 
 	return {
